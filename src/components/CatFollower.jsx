@@ -165,7 +165,7 @@ function CatFollower() {
                     >
                         <h2>¡Miau! Soy un gato.</h2>
                         <p>Me has encontrado. ¡Gracias por el click!</p>
-                        <img src="/happy_cat.jpg" alt="Gato feliz" className="modal-cat-image"/> 
+                        <img src="./happy_cat.jpg" alt="Gato feliz" className="modal-cat-image"/> 
                         
                         {/* 🚨 Botón de cierre */}
                         <button className="close-button" onClick={closeWindow}>X</button>
