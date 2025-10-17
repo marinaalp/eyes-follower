@@ -6,7 +6,7 @@
     height: 250px;
     margin: 50px auto;
     /* 🚨 Nota: Asegúrate que la ruta de la imagen sea correcta en tu proyecto */
-    background-image: url('./cat.png'); 
+    background-image: url('public/cat.png'); 
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
