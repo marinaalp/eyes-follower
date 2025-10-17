@@ -1,0 +1,112 @@
+/* src/components/CatFollower.css - Versión FINAL AJUSTADA */
+
+.cat-face-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 50px auto;
+    /* 🚨 Nota: Asegúrate que la ruta de la imagen sea correcta en tu proyecto */
+    background-image: url('./cat.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 🐛 Contenedor del Ojo (Wrapper) */
+.cat-eye-wrapper {
+    /* 🚨 CORRECCIÓN CLAVE: Esto permite que el 'transform: rotate' del JS funcione */
+    /* y que la pupila se posicione correctamente dentro de este contenedor. */
+    position: relative; 
+    
+    width: 30px;
+    height: 30px;
+    
+    /* 🐛 Posicionamiento sobre la imagen de fondo */
+    position: absolute; 
+    
+    /* Estilos del ojo */
+    border: 1px solid rgba(0, 0, 0, 0.5); 
+    background-color: transparent; 
+    
+    border-radius: 50%;
+    overflow: hidden;
+    /* 💡 Transición para que el giro se vea suave */
+    transition: transform 0.1s ease-out;
+}
+
+/* Posición específica para el Ojo Izquierdo */
+.cat-eye-left {
+    top: 110px;
+    left: 60px;
+}
+
+/* Posición específica para el Ojo Derecho */
+.cat-eye-right {
+    top: 110px;
+    left: 120px;
+}
+
+
+/* Estilos de la pupila (Punto que se mueve) */
+.bug-pupil {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    
+    /* 🚨 CORRECCIÓN: Ajustamos 'top' para centrarla dentro del contenedor 'relative' */
+    top: 25%; /* Un buen valor de inicio para centrado vertical */
+    
+    left: 50%;
+    /* Centrado con traslación */
+    transform: translate(-50%, -50%); 
+}
+.cat-modal {
+    /* 🚨 CLAVE: Fija el modal a la ventana del navegador y lo coloca encima de todo */
+    position: fixed; 
+    z-index: 1000; /* Asegura que esté por encima de cualquier otro elemento */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente (el 'bloqueo') */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Animación (se mantiene) */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cat-modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+    position: relative; /* Necesario si el botón de cierre es absoluto */
+}
+
+/* Estilo simple para el botón de cierre */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #333;
+}
+.modal-cat-image {
+    max-width: 100%; /* 🚨 CLAVE: Asegura que la imagen no exceda el ancho de su contenedor padre (el modal-content) */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    display: block;  /* Elimina el espacio extra que a veces añaden las imágenes */
+    margin: 15px auto 0 auto; /* Centra la imagen y añade un margen superior */
+    border-radius: 8px; /* Un poco de borde redondeado si lo deseas */
+}

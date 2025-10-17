@@ -1,0 +1,72 @@
+/* src/components/BugFollower.css - Gato FINAL */
+
+.bug-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    /* Forma de cabeza de gato */
+    border-radius: 45% 45% 55% 55% / 60% 60% 40% 40%; 
+    background-color: #6A1B9A; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 🐈 OREJA IZQUIERDA (::before) - Rotada y Separada 🐈 */
+.bug-container::before {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    left: 0px; /* 🚨 AJUSTE: Separación (de 8px a 4px) */
+    width: 0; 
+    height: 0;
+    
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 25px solid #6A1B9A; 
+    
+    transform: rotate(-30deg); 
+    z-index: -1; 
+}
+
+/* 🐈 OREJA DERECHA (::after) - Rotada y Separada 🐈 */
+.bug-container::after {
+    content: '';
+    position: absolute;
+    top: -10px; 
+    right: 0px; /* 🚨 AJUSTE: Separación (de 8px a 4px) */
+    width: 0; 
+    height: 0;
+    
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 25px solid #6A1B9A; 
+    
+    transform: rotate(30deg); 
+    z-index: -1;
+}
+
+/* --- ESTILOS DE LOS OJOS (Sin Cambios) --- */
+
+.bug-eye {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.2s ease-out; 
+    overflow: hidden; 
+}
+
+.bug-pupil {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
